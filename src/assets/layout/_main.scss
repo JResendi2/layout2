@@ -1,0 +1,48 @@
+// Diseño por defalut
+.layout-wrapper {
+  .layout-main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    padding: 6rem 2rem 2rem 4rem;
+    transition: margin-left $transitionDuration;
+    margin-left: 0;
+    padding-left: 2rem;
+
+    .layout-main {
+      flex: 1 1 auto;
+      border: solid black 1px;
+      background-color: var(--p-content-background);
+    }
+  }
+}
+
+.layout-wrapper.sidebar-horizontal {
+  .layout-main-container {
+    margin-left: 0;
+    padding-left: 2rem;
+  }
+}
+
+// pantallas mayores a 991px
+@media (min-width: 992px) {
+  // Sidebar ACTIVO
+  .layout-wrapper.sidebar-vertical.sidebar-vertical-active {
+    .layout-main-container {
+      margin-left: 22rem;
+    }
+  }
+  // Sidebar INACTIVO
+  .layout-static.sidebar-vertical.sidebar-vertical-inactive {
+    .layout-main-container {
+      margin-left: 0;
+      padding-left: 2rem;
+    }
+  }
+
+  .layout-wrapper.layout-static-horizontal .layout-main-container {
+    margin-left: 0;
+    padding-left: 2rem;
+  }
+}

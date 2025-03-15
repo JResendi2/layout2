@@ -1,0 +1,104 @@
+.sidebar-vertical {
+  .layout-sidebar {
+    overflow-y: auto;
+    width: 20rem;
+    transition: transform var(--transitionDuration);
+  }
+}
+
+/* pantallas mayores a 992px */
+@media (min-width: 992px) {
+  .sidebar-vertical {
+    .layout-sidebar {
+      height: calc(100vh - 8rem);
+      top: 6rem;
+    }
+  }
+
+  /* Sidebar VERTICAL -> activo*/
+  .layout-wrapper.sidebar-vertical.sidebar-vertical-active {
+    .layout-sidebar {
+      left: 2rem;
+    }
+  }
+
+  /* Sidebar VERTICAL -> inactivo*/
+  .layout-wrapper.sidebar-vertical.sidebar-vertical-inactive {
+    .layout-sidebar {
+      transform: translateX(-100%);
+      left: 0;
+    }
+  }
+}
+
+/* pantallas menores a 991px */
+@media (max-width: 991px) {
+  .layout-wrapper.sidebar-vertical {
+    .layout-sidebar {
+      height: 100vh;
+      left: 0;
+      top: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Sidebar VERTICAL -> inactivo*/
+  .layout-wrapper.sidebar-vertical.sidebar-mobile-inactive {
+    .layout-sidebar {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Sidebar VERTICAL -> activo*/
+  .layout-wrapper.sidebar-vertical.sidebar-mobile-active {
+    .layout-sidebar {
+      transform: translate(0);
+    }
+  }
+}
+
+.layout-wrapper {
+  .layout-sidebar {
+    .layout-menuitem {
+      list-style-type: none;
+
+      .menuitem-link {
+        display: flex;
+        align-items: center;
+        position: relative;
+        outline: 0 none;
+        color: var(--text-color);
+        list-style-type: none;
+
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+
+        border-radius: var(--content-border-radius);
+        transition: background-color var(--element-transition-duration),
+          box-shadow var(--element-transition-duration);
+
+        &.active-route {
+          font-weight: 700;
+          color: var(--primary-color);
+        }
+
+        .submenu-toggler {
+          font-size: 75%;
+          margin-left: auto;
+          transition: transform var(--element-transition-duration);
+        }
+      }
+
+      .menuitem-link.width-down,
+      .menuitem-link.width-href {
+        &:hover {
+          background-color: var(--surface-hover);
+        }
+      }
+    }
+  }
+}

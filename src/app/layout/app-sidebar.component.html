@@ -1,0 +1,13 @@
+<ul
+class="layout-menu"
+[class]="{ 'menu-horizontal': this.isSidebarHorizontal }"
+>
+@for (item of model; track $index) {
+    <li
+      app-menuitem
+      [lavel]="1"
+      [item]="item"
+      class="layout-menuitem lavel-1"
+    ></li>
+    }
+</ul>

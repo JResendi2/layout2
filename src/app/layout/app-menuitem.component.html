@@ -1,0 +1,40 @@
+@if(item.items){
+    <div
+      class="menuitem-link"
+      [class]="{ 'width-down': item.items.length > 0 }"
+      (click)="itemClick($event)"
+    >
+      <i *ngIf="item.icon" [class]="'menuitem-icon ' + item.icon"></i>
+      <span>{{ item.label }}</span>
+      <i
+        *ngIf="item.items.length > 0"
+        class="pi pi-fw pi-angle-down submenu-toggler"
+        [class]="{ hidden: this.isLavelOne }"
+      ></i>
+    </div>
+    @if(item.items.length > 0){
+    <ul
+      class="layout-menu"
+      [class]="{ 'lavel-1': this.isLavelOne }"
+      [@children]="submenuAnimation"
+    >
+      @for (item of item.items; track $index) {
+      <li
+        app-menuitem
+        [item]="item"
+        (hideMenuParent)="hideMenuOnHorizontal()"
+        class="layout-menuitem"
+      ></li>
+      }
+    </ul>
+    } } @else if(!item.items) {
+    <a
+      class="menuitem-link"
+      [class]="{ 'width-href': item.routerLink }"
+      [routerLink]="item.routerLink"
+      (click)="itemClick($event)"
+    >
+      <i *ngIf="item.icon" [class]="'menuitem-icon ' + item.icon"></i>
+      <span>{{ item.label }}</span>
+    </a>
+    }

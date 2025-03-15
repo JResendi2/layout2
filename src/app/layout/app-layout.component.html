@@ -1,0 +1,19 @@
+<div
+  class="layout-wrapper sidebar-vertical sidebar-vertical-active"
+  [class]="classList()"
+>
+  <app-topbar #topbar></app-topbar>
+
+  <app-sidebar class="layout-sidebar" #sidebar></app-sidebar>
+
+  <div class="layout-main-container">
+    <div class="layout-main">
+      main
+      <router-outlet />
+    </div>
+  </div>
+
+  <div class="layout-switch">
+    <switch-layout></switch-layout>
+  </div>
+</div>

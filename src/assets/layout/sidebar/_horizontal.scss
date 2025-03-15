@@ -1,0 +1,59 @@
+/* Sidebar HORIZONTAL */
+.layout-wrapper.sidebar-horizontal {
+  .layout-sidebar {
+    width: calc(100% - 50rem);
+    border-radius: 0;
+    box-shadow: none;
+    height: 4rem;
+    right: 25rem;
+    left: 25rem;
+    transition: transform 0s, left 0s;
+    border: solid red 1px;
+  }
+}
+
+.menu-horizontal {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+
+  .layout-menuitem.lavel-1 {
+    position: relative;
+    .hidden-angle-down {
+      display: none;
+    }
+    .layout-menu.lavel-1 {
+      position: absolute;
+    }
+  }
+
+  .layout-menuitem {
+    height: -webkit-fill-available;
+    cursor: pointer;
+    align-items: center;
+    text-align: center;
+
+    .menuitem-link {
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+
+    &:hover {
+      background-color: var(--surface-hover);
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .layout-wrapper.sidebar-horizontal {
+    .layout-sidebar {
+      width: calc(100% - 20rem);
+      right: 10rem;
+      left: 10rem;
+    }
+  }
+}
