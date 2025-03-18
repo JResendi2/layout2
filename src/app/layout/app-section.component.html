@@ -1,33 +1,31 @@
-<div
-      class="menuitem-link "
-      [class]="{ 'width-down': item.items && item.items.length > 0 }"
-      (click)="itemClick($event)"
-    >
-    <i *ngIf="item.icon" [class]="'menuitem-icon ' + item.icon"></i>
+<div [class]="typeHeader" (click)="itemClick($event)">
+  <div class="section-title">
+    @if (item.icon) {
+      <i [class]="'menuitem-icon ' + item.icon"></i>
+    }
     <span>{{ item.label }}</span>
-    <i
-    *ngIf="item.items && item.items.length > 0"
-    class="pi pi-fw pi-angle-down submenu-toggler"
-    [class]="{ hidden: this.isSidebarHorizontal }"
-    ></i>
+  </div>
+  @if(angle_down){
+    <i class="submenu-toggler pi pi-fw pi-angle-down "></i>
+  }
 </div>
 
 <ul
-[@children]="submenuAnimation"
-class="layout-menu"
-[class]="{ 'menu-horizontal': this.isSidebarHorizontal }"
+  [@children]="submenuAnimation"
+  [class]="typeSubmenu"
+  [style]="{'border': submenuAnimation === 'collapsed'? 'none':''}"
 >
 @for (item of item.items; track $index) {
   @if (item.items) {
     <li
-      app-section 
+      app-section
       [item]="item"
-      class="menu-section"
+      class="section-container"
     ></li>
   } @else if(item.routerLink) {
     <li
       class="link-container"
-      app-link 
+      app-link
       [item]="item"
     ></li>
     }

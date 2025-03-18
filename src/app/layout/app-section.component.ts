@@ -1,9 +1,9 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { LayoutService } from './service/layout.service';
 import { AppLinkComponent } from './app-link.component';
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { LayoutService } from './service/layout.service';
 
 @Component({
   selector: '[app-section]',
@@ -35,6 +35,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 export class AppSectionComponent {
   @Input() item!: MenuItem;
   activeSubmenu: boolean = false;
+  @Input() angle_down: boolean = true;
+  @Input() level: number = 3;
 
   constructor(private layoutService: LayoutService) {}
 
@@ -50,5 +52,21 @@ export class AppSectionComponent {
 
   get isSidebarHorizontal(): boolean {
     return this.layoutService.sidebarVertical() === false;
+  }
+
+  get typeSubmenu(){
+    if(this.level === 1){
+      return 'layout-menu-level-2';
+    } else {
+      return 'layout-menu';
+    }
+  }
+
+  get typeHeader(){
+    if(this.level === 1){
+      return 'section-header-level-1';
+    } else {
+      return 'section-header';
+    }
   }
 }

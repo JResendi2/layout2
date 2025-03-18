@@ -1,15 +1,17 @@
-<ul class="layout-menu">
+<ul class="layout-menu-level-1">
 @for (item of model; track $index) {
   @if (item.items) {
     <li
-      app-section 
-      class="section-container"
+      app-section
+      class="section-container-level-1"
       [item]="item"
+      [angle_down] = "visibilityAngleDown"
+      [level]="1"
     ></li>
   } @else if(item.routerLink) {
     <li
-      class="link-container"
-      app-link 
+      class="link-container-level-1"
+      app-link
       [item]="item"
     ></li>
     }

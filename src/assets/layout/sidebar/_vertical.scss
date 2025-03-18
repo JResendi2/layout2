@@ -3,6 +3,11 @@
     overflow-y: auto;
     width: 20rem;
     transition: transform var(--transitionDuration);
+    .layout-menu, .layout-menu-level-1, .layout-menu-level-2{
+      li ul {
+        margin-left: 1rem;
+      }
+    }
   }
 }
 
@@ -59,13 +64,14 @@
   }
 }
 
-.layout-wrapper {
+.layout-wrapper.sidebar-vertical {
   .layout-sidebar {
 
-    .link-container{
+    .link-container, .link-container-lavel-1{
        list-style-type: none;
       .link{
         display: flex;
+        gap: 0.25rem;
         align-items: center;
         position: relative;
         outline: 0 none;
@@ -84,10 +90,11 @@
       }
     }
 
-    .section-container{
+    .section-container, .section-container-level-1{
       list-style-type: none;
-      .section-title{
+      .section-header, .section-header-level-1{
         display: flex;
+        justify-content: space-between;
         align-items: center;
         position: relative;
         outline: 0 none;
@@ -103,54 +110,18 @@
         transition: background-color var(--element-transition-duration),
           box-shadow var(--element-transition-duration);
 
-        &.active-route {
-          font-weight: 700;
-          color: var(--primary-color);
+        &:hover {
+          background-color: var(--surface-hover);
         }
-      }
-    }
+        .section-title{
+          display: flex;
+          gap: 0.25rem;
 
-
-
-
-    .layout-menuitem, .menu-section {
-      list-style-type: none;
-
-      
-
-      .menuitem-link, .section-title {
-        display: flex;
-        align-items: center;
-        position: relative;
-        outline: 0 none;
-        color: var(--text-color);
-        list-style-type: none;
-
-        padding-top: 0.75rem;
-        padding-bottom: 0.75rem;
-        padding-right: 1rem;
-        padding-left: 1rem;
-
-        border-radius: var(--content-border-radius);
-        transition: background-color var(--element-transition-duration),
-          box-shadow var(--element-transition-duration);
-
-        &.active-route {
-          font-weight: 700;
-          color: var(--primary-color);
         }
-
-        .submenu-toggler {
+        .section-toggler {
           font-size: 75%;
           margin-left: auto;
           transition: transform var(--element-transition-duration);
-        }
-      }
-
-      .menuitem-link.width-down,
-      .menuitem-link.width-href {
-        &:hover {
-          background-color: var(--surface-hover);
         }
       }
     }

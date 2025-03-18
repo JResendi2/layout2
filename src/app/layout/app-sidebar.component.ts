@@ -1,27 +1,26 @@
 import { Component, ElementRef } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { LayoutService } from './service/layout.service';
 import { AppLinkComponent } from './app-link.component';
 import { AppSectionComponent } from './app-section.component';
+import { LayoutService } from './service/layout.service';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
   imports: [AppLinkComponent, AppSectionComponent],
   templateUrl: './app-sidebar.component.html',
-  styleUrl: './app-sidebar.component.scss'
+  styleUrl: './app-sidebar.component.scss',
 })
 export class AppSidebarComponent {
   model: MenuItem[] = [];
 
   constructor(public el: ElementRef, private layoutService: LayoutService) {}
 
-  get isSidebarHorizontal(): boolean {
-    return this.layoutService.sidebarVertical() === false;
+  get visibilityAngleDown(): boolean {
+    return this.layoutService.sidebarVertical() === true
   }
 
   ngOnInit(): void {
- 
     this.model = [
       {
         label: 'Home title',
