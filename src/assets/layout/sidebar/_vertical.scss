@@ -61,10 +61,64 @@
 
 .layout-wrapper {
   .layout-sidebar {
-    .layout-menuitem {
+
+    .link-container{
+       list-style-type: none;
+      .link{
+        display: flex;
+        align-items: center;
+        position: relative;
+        outline: 0 none;
+        color: var(--text-color);
+        list-style-type: none;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        border-radius: var(--content-border-radius);
+        box-shadow: var(--element-transition-duration);
+        transition: background-color var(--element-transition-duration);
+        &:hover {
+          background-color: var(--surface-hover);
+        }
+      }
+    }
+
+    .section-container{
+      list-style-type: none;
+      .section-title{
+        display: flex;
+        align-items: center;
+        position: relative;
+        outline: 0 none;
+        color: var(--text-color);
+        list-style-type: none;
+
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+
+        border-radius: var(--content-border-radius);
+        transition: background-color var(--element-transition-duration),
+          box-shadow var(--element-transition-duration);
+
+        &.active-route {
+          font-weight: 700;
+          color: var(--primary-color);
+        }
+      }
+    }
+
+
+
+
+    .layout-menuitem, .menu-section {
       list-style-type: none;
 
-      .menuitem-link {
+      
+
+      .menuitem-link, .section-title {
         display: flex;
         align-items: center;
         position: relative;

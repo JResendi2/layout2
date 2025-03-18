@@ -1,13 +1,17 @@
-<ul
-class="layout-menu"
-[class]="{ 'menu-horizontal': this.isSidebarHorizontal }"
->
+<ul class="layout-menu">
 @for (item of model; track $index) {
+  @if (item.items) {
     <li
-      app-menuitem
-      [lavel]="1"
+      app-section 
+      class="section-container"
       [item]="item"
-      class="layout-menuitem lavel-1"
+    ></li>
+  } @else if(item.routerLink) {
+    <li
+      class="link-container"
+      app-link 
+      [item]="item"
     ></li>
     }
+  }
 </ul>

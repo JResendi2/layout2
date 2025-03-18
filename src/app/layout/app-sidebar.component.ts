@@ -1,25 +1,27 @@
 import { Component, ElementRef } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { LayoutService } from './service/layout.service';
-import { AppMenuitemComponent } from './app-menuitem.component';
+import { AppLinkComponent } from './app-link.component';
+import { AppSectionComponent } from './app-section.component';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [AppMenuitemComponent],
+  imports: [AppLinkComponent, AppSectionComponent],
   templateUrl: './app-sidebar.component.html',
   styleUrl: './app-sidebar.component.scss'
 })
 export class AppSidebarComponent {
-  constructor(public el: ElementRef, private layoutService: LayoutService) {}
-
   model: MenuItem[] = [];
+
+  constructor(public el: ElementRef, private layoutService: LayoutService) {}
 
   get isSidebarHorizontal(): boolean {
     return this.layoutService.sidebarVertical() === false;
   }
 
   ngOnInit(): void {
+ 
     this.model = [
       {
         label: 'Home title',
@@ -221,7 +223,7 @@ export class AppSidebarComponent {
           {
             label: 'View Source',
             icon: 'pi pi-fw pi-github',
-            url: 'https://github.com/primefaces/sakai-ng',
+            url: 'https:ithub.com/primefaces/sakai-ng',
             target: '_blank',
           },
         ],

@@ -1,0 +1,8 @@
+<a
+    class="link"
+    [class]="{ 'width-href': item.routerLink }"
+    [routerLink]="item.routerLink">
+    <i *ngIf="item.icon" [class]="'menuitem-icon ' + item.icon"></i>
+    <span>{{ item.label }}</span>
+</a>
+
