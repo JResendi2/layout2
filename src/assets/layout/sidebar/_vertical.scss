@@ -3,7 +3,7 @@
     transition: transform var(--transitionDuration);
     height: calc(100vh);
     transition: width $transitionDuration;
-    .container-toggle{
+    .container-toggle {
       display: flex;
       justify-content: flex-start;
       padding: 1rem;
@@ -36,12 +36,12 @@
     }
   }
 
-  .layout-wrapper.sidebar-vertical.sidebar-mobile-inactive{
+  .layout-wrapper.sidebar-vertical.sidebar-mobile-inactive {
     .layout-sidebar {
       width: 7rem;
     }
   }
-  .layout-wrapper.sidebar-vertical.sidebar-mobile-active{
+  .layout-wrapper.sidebar-vertical.sidebar-mobile-active {
     .layout-sidebar {
       width: 15rem;
     }

@@ -14,14 +14,15 @@ import { LayoutService } from './service/layout.service';
 import { SwitchLayoutComponent } from './switch-layuot.component';
 
 @Component({
-    selector: 'app-layout',
-    imports: [
-        RouterOutlet,
-        AppSidebarComponent,
-        AppTopbarComponent,
-        SwitchLayoutComponent,
-    ],
-    templateUrl: './app-layout.component.html'
+  standalone: true,
+  selector: 'app-layout',
+  imports: [
+    RouterOutlet,
+    AppSidebarComponent,
+    AppTopbarComponent,
+    SwitchLayoutComponent,
+  ],
+  templateUrl: './app-layout.component.html',
 })
 export class AppLayoutComponent {
   layoutService = inject(LayoutService);
@@ -41,8 +42,10 @@ export class AppLayoutComponent {
 
   constructor() {
     effect(() => {
-      if (this.layoutService.sidebarMobileActive() 
-        || this.layoutService.currentSection() > 0) {
+      if (
+        this.layoutService.sidebarMobileActive() ||
+        this.layoutService.currentSection() > 0
+      ) {
         this.startListening();
       } else {
         this.stopListening();
