@@ -1,5 +1,6 @@
+import { LayoutService } from './service/layout.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, Input } from '@angular/core';
+import { Component, computed, Input, Signal } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { MenuLinkComponent } from './menu-link.component';
 import { MenuSectionComponent } from './menu-section.component';
@@ -32,13 +33,28 @@ import { MenuSectionComponent } from './menu-section.component';
 })
 export class SidebarSectionComponent {
   @Input() item!: MenuItem;
-  activeSubmenu: boolean = false;
+  static count_id: number = 1;
+  private id: number = SidebarSectionComponent.count_id;
+  private activeSubmenu: Signal<boolean>;
+
+  constructor(private layoutService: LayoutService){
+    SidebarSectionComponent.count_id++;
+    this.activeSubmenu = computed(() => this.layoutService.currentSection() === this.id);
+  }
 
   itemClick(event: Event) {
-    this.activeSubmenu = !this.activeSubmenu;
+    if(this.layoutService.currentSection() === this.id){
+      this.layoutService.currentSection.set(0)
+    } else {
+      this.layoutService.currentSection.set(this.id)
+    }
   }
 
   get submenuAnimation() {
-    return this.activeSubmenu ? 'expanded' : 'collapsed';
+    return this.activeSubmenu() ? 'expanded' : 'collapsed';
+  }
+
+  get showAngleDown(){
+    return this.layoutService.sidebarVertical();
   }
 }

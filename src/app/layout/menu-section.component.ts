@@ -35,8 +35,6 @@ export class MenuSectionComponent {
   @Input() item!: MenuItem;
   activeSubmenu: boolean = false;
 
-  constructor(private layoutService: LayoutService) {}
-
   itemClick(event: Event) {
     if (this.item.items) {
       this.activeSubmenu = !this.activeSubmenu;

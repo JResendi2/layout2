@@ -1,4 +1,4 @@
-<div class="section-header" (click)="itemClick($event)">
+<div class="menu-header" (click)="itemClick($event)">
   <div class="section-title">
     @if (item.icon) {
       <i [class]="'menuitem-icon ' + item.icon"></i>
@@ -10,7 +10,7 @@
 
 <ul
   [@children]="submenuAnimation"
-  class="layout-menu"
+  class="submenu"
   [style]="{'border': submenuAnimation === 'collapsed'? 'none':''}"
 >
 @for (item of item.items; track $index) {
@@ -18,12 +18,10 @@
     <li
       menu-section
       [item]="item"
-      class="section-container"
     ></li>
   } @else if(item.routerLink) {
     <li
-      class="link-container"
-      app-link
+      menu-link
       [item]="item"
     ></li>
     }

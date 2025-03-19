@@ -1,4 +1,4 @@
-<ul class="layout-menu-level-1">
+<ul class="sidebar-menu">
 @for (item of model; track $index) {
   @if (item.items) {
     <li
@@ -8,8 +8,8 @@
     ></li>
   } @else if(item.routerLink) {
     <li
-      class="link-container-level-1"
-      app-link
+      class="sidebar-link"
+      menu-link
       [item]="item"
     ></li>
     }

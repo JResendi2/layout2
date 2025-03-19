@@ -5,6 +5,9 @@
     }
     <span>{{ item.label }}</span>
   </div>
+  @if (showAngleDown) {
+    <i class="submenu-toggler pi pi-fw pi-angle-down "></i>
+  }
 </div>
 
 <ul
@@ -17,12 +20,10 @@
     <li
       menu-section
       [item]="item"
-      class="section-container"
     ></li>
   } @else if(item.routerLink) {
     <li
-      class="link-container"
-      app-link
+      menu-link
       [item]="item"
     ></li>
     }

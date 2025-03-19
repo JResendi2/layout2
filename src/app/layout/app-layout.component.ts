@@ -42,7 +42,7 @@ export class AppLayoutComponent {
 
   constructor() {
     effect(() => {
-      if (this.layoutService.sidebarMobileActive()) {
+      if (this.layoutService.sidebarMobileActive() || this.layoutService.currentSection() > 0) {
         this.startListening();
       } else {
         this.stopListening();
@@ -61,6 +61,7 @@ export class AppLayoutComponent {
       );
       if (isOutsideClicked) {
         this.layoutService.sidebarMobileActive.set(false);
+        this.layoutService.currentSection.set(0);
       }
     });
   }
