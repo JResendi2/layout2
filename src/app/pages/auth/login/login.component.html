@@ -1,31 +1,52 @@
 @defer {
-<section>
-  <div class="form-login">
-    <div class="title-login">
-      <h1>herman</h1>
-    </div>
-    <div class="login-text">Log in</div>
-    <div>
+<section class="container-login">
+  <div class="form-container">
+    <div header="Login" class="form-card">
+      <h2 class="title">Hermar</h2>
       <form class="form-login">
-        <div>
+        <div class="p-field">
           <label for="username">Username</label>
-          <input type="text" id="username" name="username" />
+
+          <input
+            type="text"
+            id="username"
+            name="username"
+            pInputText
+            [(ngModel)]="username"
+          />
         </div>
-        <div>
+        <div class="p-field password-field">
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" />
+          <div class="password-container">
+            <input
+              [type]="passwordVisible ? 'text' : 'password'"
+              id="password"
+              name="password"
+              pInputText
+              [(ngModel)]="password"
+            />
+            <button
+              type="button"
+              (click)="togglePassword()"
+              class="toggle-password"
+            >
+              <i
+                [class]="passwordVisible ? 'pi pi-eye-slash' : 'pi pi-eye'"
+              ></i>
+            </button>
+          </div>
         </div>
-        <div class="form-button">
-          <button type="submit">Log in</button>
-        </div>
+
+        <button type="submit" class="button-login">Log in</button>
       </form>
     </div>
   </div>
 </section>
 
-} @placeholder (minimum 1500ms) {
+} @placeholder (minimum 1000ms) {
 <div class="animation-truck">
   <svg
+    class="truck-svg"
     width="800"
     height="300"
     xmlns="http://www.w3.org/2000/svg"
@@ -76,31 +97,6 @@
                 172 -5z"
       />
     </g>
-    <animateTransform
-      attributeName="transform"
-      type="translate"
-      from="-200 0"
-      to="800 0"
-      dur="0.4s"
-      keyTimes="0; 0.8; 1"
-      values="-200 0; 800 0; 800 0"
-      calcMode="spline"
-      keySplines="0.5 0 0.75 1; 0.25 1 0.5 1"
-      fill="freeze"
-    />
-    <animateTransform
-      attributeName="transform"
-      type="scale"
-      additive="sum"
-      from="1"
-      to="0.8"
-      dur="1.5s"
-      keyTimes="0; 0.8; 1"
-      values="1; 1.2; 1"
-      calcMode="spline"
-      keySplines="0.5 0 0.75 1; 0.25 1 0.5 1"
-      fill="freeze"
-    />
   </svg>
 </div>
 }
