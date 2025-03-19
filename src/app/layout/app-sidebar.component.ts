@@ -23,17 +23,11 @@ export class AppSidebarComponent {
     this.model = [
       {
         label: 'Home title',
-        items: [
-          {
-            label: 'Dashboard link',
-            icon: 'pi pi-fw pi-id-card',
-            routerLink: ['/'],
-          },
-        ],
         icon: 'pi pi-fw pi-id-card',
         routerLink: ['/'],
       },
       {
+        icon: 'pi pi-fw pi-id-card',
         label: 'UI Components',
         items: [
           {
@@ -163,6 +157,7 @@ export class AppSidebarComponent {
         ],
       },
       {
+        icon: 'pi pi-fw pi-id-card',
         label: 'Hierarchy',
         items: [
           {
@@ -211,6 +206,7 @@ export class AppSidebarComponent {
         ],
       },
       {
+        icon: 'pi pi-fw pi-id-card',
         label: 'Get Started',
         items: [
           {
