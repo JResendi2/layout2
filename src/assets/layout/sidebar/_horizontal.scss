@@ -24,8 +24,11 @@
       padding: 0;
       list-style-type: none;
 
-      .menu-link{
+      .sidebar-link{
+        flex: 1;
+        .menu-link{
         display: flex;
+        justify-content: center;
         gap: 0.25rem;
         align-items: center;
         outline: 0 none;
@@ -39,8 +42,10 @@
         box-shadow: var(--element-transition-duration);
         transition: background-color var(--element-transition-duration);
         &:hover {
-          background-color: var(--surface-hover);
+          background-color: #f1f5f9;
         }
+        }
+
       }
 
       .sidebar-section{
@@ -53,12 +58,13 @@
           justify-content: center;
           cursor: pointer;
           border-radius: 6px;
-
+          
           &:hover {
-            background-color: var(--surface-hover);
+            background-color: #f1f5f9;
           }
-
+          
           .section-title{
+            align-items: center;
             display: flex;
             gap: 0.25rem;
           }
@@ -66,15 +72,17 @@
         }
 
         .section-menu{
-          background-color: var(--surface-card);
+          background-color: white;
           position: absolute;
           width: 200px;
-          border: 1px solid var(--surface-border);
           overflow: hidden;
           left: 1rem;
           padding: 0;
+          background-color: white;
+          border: 1px solid #dee2e6;
 
           .menu-header{
+            cursor: pointer;
             display: flex;
             gap: 0.25rem;
             justify-content: space-between;
@@ -86,11 +94,9 @@
             padding-bottom: 0.75rem;
             padding-right: 1rem;
             padding-left: 1rem;
-            border-radius: var(--content-border-radius);
-            box-shadow: var(--element-transition-duration);
             transition: background-color var(--element-transition-duration);
             &:hover {
-              background-color: var(--surface-hover);
+              background-color: #f1f5f9;
             }
             .section-title{
               display: flex;
@@ -108,11 +114,8 @@
             padding-bottom: 0.75rem;
             padding-right: 1rem;
             padding-left: 1rem;
-            border-radius: var(--content-border-radius);
-            box-shadow: var(--element-transition-duration);
-            transition: background-color var(--element-transition-duration);
             &:hover {
-              background-color: var(--surface-hover);
+              background-color: #f1f5f9;
             }
           }
           .submenu{
@@ -141,6 +144,11 @@
             .title{
               display: none;
             }
+          }
+        }
+        .menu-link{
+          .title{
+            display: none;
           }
         }
       }

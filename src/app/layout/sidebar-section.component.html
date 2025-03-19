@@ -6,7 +6,7 @@
     <span class="title">{{ item.label }}</span>
   </div>
   @if (showAngleDown) {
-    <i class="submenu-toggler pi pi-fw pi-angle-down "></i>
+    <i [class]="'submenu-toggler pi pi-fw pi-angle-down ' + submenuAnimation"></i>
   }
 </div>
 

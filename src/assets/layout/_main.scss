@@ -5,43 +5,66 @@
     flex-direction: column;
     min-height: 100vh;
     justify-content: space-between;
-    padding: 6rem 2rem 2rem 4rem;
+    padding-top: 4rem;
     transition: margin-left $transitionDuration;
-    margin-left: 0;
-    padding-left: 2rem;
-
     .layout-main {
       flex: 1 1 auto;
+      padding: 1rem;
       background-color: white;
     }
   }
 }
 
-.layout-wrapper.sidebar-horizontal {
-  .layout-main-container {
-    margin-left: 0;
-    padding-left: 2rem;
-  }
-}
 
 // pantallas mayores a 991px
 @media (min-width: 992px) {
   // Sidebar ACTIVO
   .layout-wrapper.sidebar-vertical.sidebar-vertical-active {
     .layout-main-container {
-      margin-left: 22rem;
+      margin-left: 15rem;
     }
   }
   // Sidebar INACTIVO
-  .layout-static.sidebar-vertical.sidebar-vertical-inactive {
+  .layout-wrapper.sidebar-vertical.sidebar-vertical-inactive {
     .layout-main-container {
-      margin-left: 0;
-      padding-left: 2rem;
+      margin-left: 7rem;
     }
   }
 
-  .layout-wrapper.layout-static-horizontal .layout-main-container {
-    margin-left: 0;
-    padding-left: 2rem;
+  // sidebar horizontal
+  .layout-wrapper.sidebar-horizontal {
+    .layout-main-container {
+      margin-left: 0;
+    }
   }
+  
+}
+
+// pantallas menores a 991px
+@media (max-width: 991px) {
+  .layout-wrapper.sidebar-vertical {
+    .layout-main-container {
+      margin-left: 7rem;
+    }
+  }
+  // // Sidebar ACTIVO
+  // .layout-wrapper.sidebar-vertical.sidebar-vertical-active {
+  //   .layout-main-container {
+  //     margin-left: 15rem;
+  //   }
+  // }
+  // // Sidebar INACTIVO
+  // .layout-wrapper.sidebar-vertical.sidebar-vertical-inactive {
+  //   .layout-main-container {
+  //     margin-left: 7rem;
+  //   }
+  // }
+
+  // sidebar horizontal
+  .layout-wrapper.sidebar-horizontal {
+    .layout-main-container {
+      margin-left: 0;
+    }
+  }
+  
 }

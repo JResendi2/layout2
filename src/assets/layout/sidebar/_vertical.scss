@@ -1,60 +1,67 @@
 .sidebar-vertical {
   .layout-sidebar {
     overflow-y: auto;
-    width: 20rem;
     transition: transform var(--transitionDuration);
+    height: calc(100vh);
+    transition: width $transitionDuration;
+    .container-toggle{
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem 1rem 0 0;
+    }
   }
 }
 
 /* pantallas mayores a 992px */
 @media (min-width: 992px) {
-  .sidebar-vertical {
-    .layout-sidebar {
-      height: calc(100vh - 8rem);
-      top: 6rem;
-    }
-  }
-
   /* Sidebar VERTICAL -> activo*/
   .layout-wrapper.sidebar-vertical.sidebar-vertical-active {
     .layout-sidebar {
-      left: 2rem;
+      width: 15rem;
     }
   }
 
   /* Sidebar VERTICAL -> inactivo*/
   .layout-wrapper.sidebar-vertical.sidebar-vertical-inactive {
     .layout-sidebar {
-      transform: translateX(-100%);
-      left: 0;
+      width: 7rem;
+      .sidebar-menu{
+        .sidebar-section{
+          .section-header{
+            .title{
+              display: none;
+            }
+          }
+        }
+        .menu-link{
+          .title{
+            display: none;
+          }
+        }
+      }
     }
   }
 }
 
 /* pantallas menores a 991px */
 @media (max-width: 991px) {
-  .layout-wrapper.sidebar-vertical {
+  .layout-wrapper {
     .layout-sidebar {
-      height: 100vh;
-      left: 0;
-      top: 0;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      transform: translateX(-100%);
-    }
-  }
-
-  /* Sidebar VERTICAL -> inactivo*/
-  .layout-wrapper.sidebar-vertical.sidebar-mobile-inactive {
-    .layout-sidebar {
-      transform: translateX(-100%);
-    }
-  }
-
-  /* Sidebar VERTICAL -> activo*/
-  .layout-wrapper.sidebar-vertical.sidebar-mobile-active {
-    .layout-sidebar {
-      transform: translate(0);
+      width: 7rem;
+      .sidebar-menu{
+        .sidebar-section{
+          .section-header{
+            .title{
+              display: none;
+            }
+          }
+        }
+        .menu-link{
+          .title{
+            display: none;
+          }
+        }
+      }
     }
   }
 }
@@ -91,6 +98,12 @@
               display: flex;
               gap: 0.25rem;
             }
+            .submenu-toggler {
+              transition: transform 0.5s ease-in-out;
+              &.expanded {
+                transform: rotate(180deg);
+              }
+            }
           }
           .menu-link{
             display: flex;
@@ -110,6 +123,7 @@
               background-color: var(--surface-hover);
             }
           }
+
         }
 
   }

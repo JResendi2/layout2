@@ -224,4 +224,8 @@ export class AppSidebarComponent {
       },
     ];
   }
+
+  toggleSidebar() {
+    this.layoutService.sidebarActive.update((value) => !value);
+  }
 }
