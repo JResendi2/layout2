@@ -2,13 +2,14 @@ import { Component, ElementRef, inject } from '@angular/core';
 import { LayoutService } from './service/layout.service';
 
 @Component({
-    selector: 'switch-layout',
-    imports: [],
-    templateUrl: './switch-layout.component.html'
+  standalone: true,
+  selector: 'switch-layout',
+  imports: [],
+  templateUrl: './switch-layout.component.html',
 })
 export class SwitchLayoutComponent {
   layoutService = inject(LayoutService);
-  
+
   constructor(public el: ElementRef) {}
 
   toggleSidebar() {
