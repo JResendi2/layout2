@@ -5,8 +5,13 @@
     transition: width $transitionDuration;
     .container-toggle {
       display: flex;
-      justify-content: flex-start;
-      padding: 1rem;
+      justify-content: center;
+      padding: 1rem 0 0 0;
+
+      .layout-btn-topbar fa-icon {
+        font-size: 40px; /* Tamaño del ícono */
+        color: var(--primary-contrast-color); /* Color del ícono */
+      }
     }
   }
 }
@@ -16,7 +21,7 @@
   /* Sidebar VERTICAL -> activo*/
   .layout-wrapper.sidebar-vertical.sidebar-vertical-active {
     .layout-sidebar {
-      width: 15rem;
+      width: 10rem;
     }
   }
 
@@ -32,18 +37,18 @@
 @media (max-width: 991px) {
   .layout-wrapper {
     .layout-sidebar {
-      width: 7rem;
+      width: 6rem;
     }
   }
 
   .layout-wrapper.sidebar-vertical.sidebar-mobile-inactive {
     .layout-sidebar {
-      width: 7rem;
+      width: 5rem;
     }
   }
   .layout-wrapper.sidebar-vertical.sidebar-mobile-active {
     .layout-sidebar {
-      width: 15rem;
+      width: 8rem;
     }
   }
 }
@@ -77,138 +82,7 @@
         box-shadow: var(--element-transition-duration);
         transition: background-color var(--element-transition-duration);
         &:hover {
-          background-color: #f1f5f9;
-        }
-        .section-title{
-          display: flex;
-          gap: 0.25rem;
-          .title{
-            display: none;
-          }
-        }
-        .submenu-toggler {
-          transition: transform 0.5s ease-in-out;
-          &.expanded {
-            transform: rotate(180deg);
-          }
-        }
-      }
-
-      .sidebar-link{
-        .menu-link{
-          display: flex;
-          gap: 0.25rem;
-          align-items: center;
-          outline: 0 none;
-          color: var(--text-color);
-          list-style-type: none;
-          padding-top: 0.75rem;
-          padding-bottom: 0.75rem;
-          padding-right: 1rem;
-          padding-left: 1rem;
-          border-radius: var(--content-border-radius);
-          box-shadow: var(--element-transition-duration);
-          transition: background-color var(--element-transition-duration);
-          &:hover {
-            background-color: #f1f5f9;
-          }
-          .title{
-            display: none;
-          }
-        }
-      } 
-
-      .section-menu{
-            width: 14rem;
-            border: 1px solid #dee2e6;
-            padding: 0;
-            position: absolute;
-            background-color: white;
-            left: 100%;
-            list-style: none;
-            overflow: hidden;
-
-            .menu-header{
-              display: flex;
-              gap: 0.25rem;
-              justify-content: space-between;
-              align-items: center;
-              outline: 0 none;
-              color: var(--text-color);
-              list-style-type: none;
-              padding-top: 0.75rem;
-              padding-bottom: 0.75rem;
-              padding-right: 1rem;
-              padding-left: 1rem;
-              border-radius: var(--content-border-radius);
-              box-shadow: var(--element-transition-duration);
-              transition: background-color var(--element-transition-duration);
-              &:hover {
-                background-color: #f1f5f9;
-              }
-              .section-title{
-                display: flex;
-                gap: 0.25rem;
-              }
-              .submenu-toggler {
-                transition: transform 0.5s ease-in-out;
-                &.expanded {
-                  transform: rotate(180deg);
-                }
-              }
-            }
-            .menu-link{
-              display: flex;
-              gap: 0.25rem;
-              align-items: center;
-              outline: 0 none;
-              color: var(--text-color);
-              list-style-type: none;
-              padding-top: 0.75rem;
-              padding-bottom: 0.75rem;
-              padding-right: 1rem;
-              padding-left: 1rem;
-              border-radius: var(--content-border-radius);
-              box-shadow: var(--element-transition-duration);
-              transition: background-color var(--element-transition-duration);
-              &:hover {
-                background-color: #f1f5f9;
-              }
-            }
-
-        .submenu{
-            padding: 0;
-            margin-left: 1rem;
-            list-style: none;
-            overflow: hidden;
-        }
-      }
-    }
-
-    .sidebar-menu.menu-full{
-      padding: 0;
-      margin-left: 1rem;
-      list-style: none;
-      overflow: hidden;
-
-      .section-header{
-        cursor: pointer;
-        display: flex;
-        gap: 0.25rem;
-        justify-content: space-between;
-        align-items: center;
-        outline: 0 none;
-        color: var(--text-color);
-        list-style-type: none;
-        padding-top: 0.75rem;
-        padding-bottom: 0.75rem;
-        padding-right: 1rem;
-        padding-left: 1rem;
-        border-radius: var(--content-border-radius);
-        box-shadow: var(--element-transition-duration);
-        transition: background-color var(--element-transition-duration);
-        &:hover {
-          background-color: #f1f5f9;
+          background-color: var(--text-color);
         }
         .section-title{
           display: flex;
