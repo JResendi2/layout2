@@ -9,13 +9,13 @@
 
 <ul
   [@children]="submenuAnimation"
-  class="layout-menu"
+  class="section-menu"
   [style]="{'border': submenuAnimation === 'collapsed'? 'none':''}"
 >
 @for (item of item.items; track $index) {
   @if (item.items) {
     <li
-      app-section
+      menu-section
       [item]="item"
       class="section-container"
     ></li>

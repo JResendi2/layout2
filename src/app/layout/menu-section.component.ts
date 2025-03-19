@@ -6,7 +6,7 @@ import { MenuLinkComponent } from './menu-link.component';
 import { LayoutService } from './service/layout.service';
 
 @Component({
-  selector: '[app-section]',
+  selector: '[menu-section]',
   standalone: true,
   imports: [CommonModule, MenuLinkComponent],
   templateUrl: './menu-section.component.html',
