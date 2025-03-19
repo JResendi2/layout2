@@ -12,7 +12,7 @@
   </a>
 </div>
 
-<ul class="sidebar-menu">
+<ul class="sidebar-menu" [class]="classList()">
   @for (item of model; track $index) { @if (item.items) {
   <li sidebar-section class="sidebar-section" [item]="item"></li>
   } @else if(item.routerLink) {

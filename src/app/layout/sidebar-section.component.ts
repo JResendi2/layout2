@@ -63,6 +63,6 @@ export class SidebarSectionComponent {
   }
 
   get showAngleDown() {
-    return this.layoutService.sidebarVertical();
+    return this.layoutService.sidebarVertical() && this.layoutService.sidebarActive();
   }
 }
