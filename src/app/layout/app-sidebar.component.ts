@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, computed, ElementRef, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { MenuLinkComponent } from './menu-link.component';
 import { LayoutService } from './service/layout.service';
@@ -231,12 +231,18 @@ export class AppSidebarComponent {
   }
 
   toggleSidebar() {
+    this.layoutService.currentSection.set(0)
     if (this.isMobile()) {
       this.layoutService.sidebarMobileActive.update((value) => !value);
     } else {
       this.layoutService.sidebarActive.update((value) => !value);
     }
   }
+
+  classList = computed(() => ({
+    'menu-full': this.layoutService.sidebarActive(),
+    'menu-mini': !this.layoutService.sidebarActive(),
+  }));
 
   private isMobile(): boolean {
     return window.innerWidth < 992;
