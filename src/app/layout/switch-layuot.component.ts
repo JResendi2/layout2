@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, inject } from '@angular/core';
 import { LayoutService } from './service/layout.service';
 
 @Component({
@@ -9,6 +9,8 @@ import { LayoutService } from './service/layout.service';
 })
 export class SwitchLayoutComponent {
   layoutService = inject(LayoutService);
+  
+  constructor(public el: ElementRef) {}
 
   toggleSidebar() {
     if (this.layoutService.sidebarVertical()) {

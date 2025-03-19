@@ -64,6 +64,31 @@
       }
     }
   }
+
+  .layout-wrapper.sidebar-vertical.sidebar-mobile-inactive{
+    .layout-sidebar {
+      width: 7rem;
+    }
+  }
+  .layout-wrapper.sidebar-vertical.sidebar-mobile-active{
+    .layout-sidebar {
+      width: 15rem;
+      .sidebar-menu{
+        .sidebar-section{
+          .section-header{
+            .title{
+              display: block;
+            }
+          }
+        }
+        .menu-link{
+          .title{
+            display: block;
+          }
+        }
+      }
+    }
+  }
 }
 
 .layout-wrapper.sidebar-vertical {

@@ -20,6 +20,10 @@ export class MenuLinkComponent {
     if(this.layoutService.sidebarVertical() === false){
       this.layoutService.currentSection.set(0)
     } 
+
+    if(this.layoutService.sidebarMobileActive()){
+      this.layoutService.sidebarMobileActive.set(false)
+    } 
   }
 
 }

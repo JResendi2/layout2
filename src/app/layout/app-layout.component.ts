@@ -42,7 +42,8 @@ export class AppLayoutComponent {
 
   constructor() {
     effect(() => {
-      if (this.layoutService.sidebarMobileActive() || this.layoutService.currentSection() > 0) {
+      if (this.layoutService.sidebarMobileActive() 
+        || this.layoutService.currentSection() > 0) {
         this.startListening();
       } else {
         this.stopListening();
@@ -56,8 +57,8 @@ export class AppLayoutComponent {
       const isOutsideClicked = !(
         this.sidebar.el.nativeElement.isSameNode(event.target) ||
         this.sidebar.el.nativeElement.contains(event.target) ||
-        this.topbar.buttonToggle.nativeElement.isSameNode(event.target) ||
-        this.topbar.buttonToggle.nativeElement.contains(event.target)
+        this.sidebar.buttonToggle.nativeElement.isSameNode(event.target) ||
+        this.sidebar.buttonToggle.nativeElement.contains(event.target)
       );
       if (isOutsideClicked) {
         this.layoutService.sidebarMobileActive.set(false);

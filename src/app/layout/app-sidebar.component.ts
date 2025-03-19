@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { MenuLinkComponent } from './menu-link.component';
 import { LayoutService } from './service/layout.service';
@@ -11,6 +11,7 @@ import { SidebarSectionComponent } from './sidebar-section.component';
   templateUrl: './app-sidebar.component.html',
 })
 export class AppSidebarComponent {
+  @ViewChild('buttonToggle') buttonToggle!: any;
   model: MenuItem[] = [];
 
   constructor(public el: ElementRef, private layoutService: LayoutService) {}
@@ -225,7 +226,19 @@ export class AppSidebarComponent {
     ];
   }
 
+  get hideToggleSidebar(){
+    return this.layoutService.sidebarVertical() === false;
+  }
+
   toggleSidebar() {
-    this.layoutService.sidebarActive.update((value) => !value);
+    if (this.isMobile()) {
+      this.layoutService.sidebarMobileActive.update((value) => !value);
+    } else {
+      this.layoutService.sidebarActive.update((value) => !value);
+    }
+  }
+
+  private isMobile(): boolean {
+    return window.innerWidth < 992;
   }
 }
