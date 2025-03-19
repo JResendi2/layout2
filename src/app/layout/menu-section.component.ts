@@ -2,15 +2,14 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { AppLinkComponent } from './app-link.component';
+import { MenuLinkComponent } from './menu-link.component';
 import { LayoutService } from './service/layout.service';
 
 @Component({
   selector: '[app-section]',
   standalone: true,
-  imports: [CommonModule, AppLinkComponent],
-  templateUrl: './app-section.component.html',
-  styleUrl: './app-section.component.scss',
+  imports: [CommonModule, MenuLinkComponent],
+  templateUrl: './menu-section.component.html',
   animations: [
     trigger('children', [
       state(
@@ -32,11 +31,9 @@ import { LayoutService } from './service/layout.service';
     ]),
   ],
 })
-export class AppSectionComponent {
+export class MenuSectionComponent {
   @Input() item!: MenuItem;
   activeSubmenu: boolean = false;
-  @Input() angle_down: boolean = true;
-  @Input() level: number = 3;
 
   constructor(private layoutService: LayoutService) {}
 
@@ -48,25 +45,5 @@ export class AppSectionComponent {
 
   get submenuAnimation() {
     return this.activeSubmenu ? 'expanded' : 'collapsed';
-  }
-
-  get isSidebarHorizontal(): boolean {
-    return this.layoutService.sidebarVertical() === false;
-  }
-
-  get typeSubmenu(){
-    if(this.level === 1){
-      return 'layout-menu-level-2';
-    } else {
-      return 'layout-menu';
-    }
-  }
-
-  get typeHeader(){
-    if(this.level === 1){
-      return 'section-header-level-1';
-    } else {
-      return 'section-header';
-    }
   }
 }

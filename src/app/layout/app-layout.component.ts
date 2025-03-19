@@ -8,10 +8,10 @@ import {
 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { fromEvent, Subscription } from 'rxjs';
+import { AppSidebarComponent } from './app-sidebar.component';
 import { AppTopbarComponent } from './app-topbar.component';
 import { LayoutService } from './service/layout.service';
 import { SwitchLayoutComponent } from './switch-layuot.component';
-import { AppSidebarComponent } from './app-sidebar.component';
 
 @Component({
   selector: 'app-layout',
@@ -23,7 +23,6 @@ import { AppSidebarComponent } from './app-sidebar.component';
     SwitchLayoutComponent,
   ],
   templateUrl: './app-layout.component.html',
-  styleUrl: './app-layout.component.scss',
 })
 export class AppLayoutComponent {
   layoutService = inject(LayoutService);

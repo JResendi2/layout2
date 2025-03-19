@@ -1,15 +1,14 @@
 import { Component, ElementRef } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { AppLinkComponent } from './app-link.component';
-import { AppSectionComponent } from './app-section.component';
+import { MenuLinkComponent } from './menu-link.component';
 import { LayoutService } from './service/layout.service';
+import { SidebarSectionComponent } from './sidebar-section.component';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [AppLinkComponent, AppSectionComponent],
+  imports: [MenuLinkComponent, SidebarSectionComponent],
   templateUrl: './app-sidebar.component.html',
-  styleUrl: './app-sidebar.component.scss',
 })
 export class AppSidebarComponent {
   model: MenuItem[] = [];

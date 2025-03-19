@@ -1,0 +1,30 @@
+<div class="section-header" (click)="itemClick($event)">
+  <div class="section-title">
+    @if (item.icon) {
+      <i [class]="'menuitem-icon ' + item.icon"></i>
+    }
+    <span>{{ item.label }}</span>
+  </div>
+</div>
+
+<ul
+  [@children]="submenuAnimation"
+  class="layout-menu"
+  [style]="{'border': submenuAnimation === 'collapsed'? 'none':''}"
+>
+@for (item of item.items; track $index) {
+  @if (item.items) {
+    <li
+      app-section
+      [item]="item"
+      class="section-container"
+    ></li>
+  } @else if(item.routerLink) {
+    <li
+      class="link-container"
+      app-link
+      [item]="item"
+    ></li>
+    }
+  }
+</ul>

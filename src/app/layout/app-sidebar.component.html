@@ -2,11 +2,9 @@
 @for (item of model; track $index) {
   @if (item.items) {
     <li
-      app-section
-      class="section-container-level-1"
+      sidebar-section
+      class="sidebar-section"
       [item]="item"
-      [angle_down] = "visibilityAngleDown"
-      [level]="1"
     ></li>
   } @else if(item.routerLink) {
     <li

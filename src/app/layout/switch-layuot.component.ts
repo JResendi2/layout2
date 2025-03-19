@@ -6,7 +6,6 @@ import { LayoutService } from './service/layout.service';
   standalone: true,
   imports: [],
   templateUrl: './switch-layout.component.html',
-  styleUrl: './switch-layout.component.scss',
 })
 export class SwitchLayoutComponent {
   layoutService = inject(LayoutService);
