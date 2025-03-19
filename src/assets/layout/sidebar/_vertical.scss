@@ -21,7 +21,7 @@
   /* Sidebar VERTICAL -> activo*/
   .layout-wrapper.sidebar-vertical.sidebar-vertical-active {
     .layout-sidebar {
-      width: 10rem;
+      width: 15rem;
     }
   }
 
@@ -48,7 +48,7 @@
   }
   .layout-wrapper.sidebar-vertical.sidebar-mobile-active {
     .layout-sidebar {
-      width: 8rem;
+      width: 15rem;
     }
   }
 }
@@ -57,13 +57,13 @@
   .layout-sidebar {
     padding: 0;
 
+
     .sidebar-menu.menu-mini{
       padding: 0;
       margin-left: 1rem;
       margin-right: 1rem;
       list-style: none;
       position: relative;
-
 
       .section-header{
         cursor: pointer;
@@ -72,7 +72,7 @@
         justify-content: space-between;
         align-items: center;
         outline: 0 none;
-        color: var(--text-color);
+        color: var(--primary-contrast-color);
         list-style-type: none;
         padding-top: 0.75rem;
         padding-bottom: 0.75rem;
@@ -82,7 +82,138 @@
         box-shadow: var(--element-transition-duration);
         transition: background-color var(--element-transition-duration);
         &:hover {
-          background-color: var(--text-color);
+          background-color: #f1f5f9;
+        }
+        .section-title{
+          display: flex;
+          gap: 0.25rem;
+          .title{
+            display: none;
+          }
+        }
+        .submenu-toggler {
+          transition: transform 0.5s ease-in-out;
+          &.expanded {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .sidebar-link{
+        .menu-link{
+          display: flex;
+          gap: 0.25rem;
+          align-items: center;
+          outline: 0 none;
+          color: var(--primary-contrast-color);
+          list-style-type: none;
+          padding-top: 0.75rem;
+          padding-bottom: 0.75rem;
+          padding-right: 1rem;
+          padding-left: 1rem;
+          border-radius: var(--content-border-radius);
+          box-shadow: var(--element-transition-duration);
+          transition: background-color var(--element-transition-duration);
+          &:hover {
+            background-color: #f1f5f9;
+          }
+          .title{
+            display: none;
+          }
+        }
+      } 
+
+      .section-menu{
+            width: 14rem;
+            border: 1px solid #dee2e6;
+            padding: 0;
+            position: absolute;
+            background-color: white;
+            left: 100%;
+            list-style: none;
+            overflow: hidden;
+
+            .menu-header{
+              display: flex;
+              gap: 0.25rem;
+              justify-content: space-between;
+              align-items: center;
+              outline: 0 none;
+              color: var(--primary-contrast-color);
+              list-style-type: none;
+              padding-top: 0.75rem;
+              padding-bottom: 0.75rem;
+              padding-right: 1rem;
+              padding-left: 1rem;
+              border-radius: var(--content-border-radius);
+              box-shadow: var(--element-transition-duration);
+              transition: background-color var(--element-transition-duration);
+              &:hover {
+                background-color: #f1f5f9;
+              }
+              .section-title{
+                display: flex;
+                gap: 0.25rem;
+              }
+              .submenu-toggler {
+                transition: transform 0.5s ease-in-out;
+                &.expanded {
+                  transform: rotate(180deg);
+                }
+              }
+            }
+            .menu-link{
+              display: flex;
+              gap: 0.25rem;
+              align-items: center;
+              outline: 0 none;
+              color: var(--primary-contrast-color);
+              list-style-type: none;
+              padding-top: 0.75rem;
+              padding-bottom: 0.75rem;
+              padding-right: 1rem;
+              padding-left: 1rem;
+              border-radius: var(--content-border-radius);
+              box-shadow: var(--element-transition-duration);
+              transition: background-color var(--element-transition-duration);
+              &:hover {
+                background-color: #f1f5f9;
+              }
+            }
+
+        .submenu{
+            padding: 0;
+            margin-left: 1rem;
+            list-style: none;
+            overflow: hidden;
+        }
+      }
+    }
+
+    .sidebar-menu.menu-full{
+      padding: 0;
+      margin-left: 1rem;
+      list-style: none;
+      overflow: hidden;
+
+      .section-header{
+        cursor: pointer;
+        display: flex;
+        gap: 0.25rem;
+        justify-content: space-between;
+        align-items: center;
+        outline: 0 none;
+        color: var(--primary-contrast-color);
+        list-style-type: none;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        border-radius: var(--content-border-radius);
+        box-shadow: var(--element-transition-duration);
+        transition: background-color var(--element-transition-duration);
+        &:hover {
+          background-color: #f1f5f9;
         }
         .section-title{
           display: flex;
@@ -101,7 +232,7 @@
         gap: 0.25rem;
         align-items: center;
         outline: 0 none;
-        color: var(--text-color);
+        color: var(--primary-contrast-color);
         list-style-type: none;
         padding-top: 0.75rem;
         padding-bottom: 0.75rem;
@@ -127,7 +258,7 @@
               justify-content: space-between;
               align-items: center;
               outline: 0 none;
-              color: var(--text-color);
+              color: var(--primary-contrast-color);
               list-style-type: none;
               padding-top: 0.75rem;
               padding-bottom: 0.75rem;
@@ -155,7 +286,7 @@
               gap: 0.25rem;
               align-items: center;
               outline: 0 none;
-              color: var(--text-color);
+              color: var(--primary-contrast-color);
               list-style-type: none;
               padding-top: 0.75rem;
               padding-bottom: 0.75rem;

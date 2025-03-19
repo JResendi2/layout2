@@ -3,7 +3,7 @@
     @if (item.icon) {
       <i [class]="'menuitem-icon ' + item.icon"></i>
     }
-    <span class="title">{{ item.label }}</span>
+    <span class="title white-space-nowrap">{{ item.label }}</span>
   </div>
   @if (showAngleDown) {
     <i [class]="'submenu-toggler pi pi-fw pi-angle-down ' + submenuAnimation"></i>
