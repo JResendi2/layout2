@@ -10,12 +10,11 @@ import { Component, computed, Input, Signal } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { MenuLinkComponent } from './menu-link.component';
 import { MenuSectionComponent } from './menu-section.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'; // Importa el módulo de Font Awesome
 
 @Component({
   selector: '[sidebar-section]',
   standalone: true,
-  imports: [MenuSectionComponent, MenuLinkComponent, FontAwesomeModule],
+  imports: [MenuSectionComponent, MenuLinkComponent],
   templateUrl: './sidebar-section.component.html',
   animations: [
     trigger('children', [
