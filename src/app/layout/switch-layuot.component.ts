@@ -2,10 +2,9 @@ import { Component, ElementRef, inject } from '@angular/core';
 import { LayoutService } from './service/layout.service';
 
 @Component({
-  selector: 'switch-layout',
-  standalone: true,
-  imports: [],
-  templateUrl: './switch-layout.component.html',
+    selector: 'switch-layout',
+    imports: [],
+    templateUrl: './switch-layout.component.html'
 })
 export class SwitchLayoutComponent {
   layoutService = inject(LayoutService);

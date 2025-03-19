@@ -2,10 +2,9 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { LayoutService } from './service/layout.service';
 
 @Component({
-  selector: 'app-topbar',
-  standalone: true,
-  imports: [],
-  templateUrl: './app-topbar.component.html',
+    selector: 'app-topbar',
+    imports: [],
+    templateUrl: './app-topbar.component.html'
 })
 export class AppTopbarComponent {
   @ViewChild('buttonToggle') buttonToggle!: any;

@@ -1,3 +1,58 @@
-$transitionDuration: 0.5s;
+:root {
+  --primary-color: #002044; // Color principal personalizado
+  --primary-contrast-color: #ffffff; // Color de contraste para texto sobre el color principal
+  --text-color: #2b2b2b; // Color de texto principal
+  --text-color-secondary: #666666; // Color de texto secundario
+  --surface-border: #e0e0e0; // Color del borde de superficies
+  --surface-card: #ffffff; // Color de fondo para tarjetas o superficies
+  --surface-hover: #f5f5f5; // Color de fondo al pasar el ratón sobre elementos
+  --surface-overlay: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); // Color de superposición (overlay)
+  --maskbg: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); // Color de fondo para máscaras (modales, diálogos)
+  --content-border-radius: 8px; // Radio de borde para elementos
+  --layout-section-transition-duration: 0.2s; // Duración de transición para secciones
+  --element-transition-duration: 0.3s; // Duración de transición para elementos
+  --focus-ring-width: 2px; // Ancho del anillo de enfoque
+  --focus-ring-style: solid; // Estilo del anillo de enfoque
+  --focus-ring-color: #002044; // Color del anillo de enfoque (basado en el color principal)
+  --focus-ring-offset: 2px; // Desplazamiento del anillo de enfoque
+  --focus-ring-shadow: 0 0 0 2px rgba(0, 32, 68, 0.2); // Sombra del anillo de enfoque
+}
+
+body {
+  background-color: var(--color-background-light);
+  color: var(--color-text-dark);
+}
+
+.header {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+.button-primary {
+  background-color: var(--color-accent-1);
+  color: var(--color-text-light);
+}
+
+.button-secondary {
+  background-color: var(--color-accent-2);
+  color: var(--color-text-light);
+}
+
+.alert {
+  background-color: var(--color-accent-3);
+  color: var(--color-text-dark);
+}
+
+$transitionDuration: 1s;
 $borderRadius: 15px;
 $scale: 14px;

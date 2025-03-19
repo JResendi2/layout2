@@ -5,10 +5,9 @@ import { LayoutService } from './service/layout.service';
 import { SidebarSectionComponent } from './sidebar-section.component';
 
 @Component({
-  selector: 'app-sidebar',
-  standalone: true,
-  imports: [MenuLinkComponent, SidebarSectionComponent],
-  templateUrl: './app-sidebar.component.html',
+    selector: 'app-sidebar',
+    imports: [MenuLinkComponent, SidebarSectionComponent],
+    templateUrl: './app-sidebar.component.html'
 })
 export class AppSidebarComponent {
   @ViewChild('buttonToggle') buttonToggle!: any;

@@ -1,5 +1,11 @@
 import { LayoutService } from './service/layout.service';
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 import { Component, computed, Input, Signal } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { MenuLinkComponent } from './menu-link.component';
@@ -37,16 +43,18 @@ export class SidebarSectionComponent {
   private id: number = SidebarSectionComponent.count_id;
   private activeSubmenu: Signal<boolean>;
 
-  constructor(private layoutService: LayoutService){
+  constructor(private layoutService: LayoutService) {
     SidebarSectionComponent.count_id++;
-    this.activeSubmenu = computed(() => this.layoutService.currentSection() === this.id);
+    this.activeSubmenu = computed(
+      () => this.layoutService.currentSection() === this.id
+    );
   }
 
   itemClick(event: Event) {
-    if(this.layoutService.currentSection() === this.id){
-      this.layoutService.currentSection.set(0)
+    if (this.layoutService.currentSection() === this.id) {
+      this.layoutService.currentSection.set(0);
     } else {
-      this.layoutService.currentSection.set(this.id)
+      this.layoutService.currentSection.set(this.id);
     }
   }
 
@@ -54,7 +62,7 @@ export class SidebarSectionComponent {
     return this.activeSubmenu() ? 'expanded' : 'collapsed';
   }
 
-  get showAngleDown(){
-    return this.layoutService.sidebarVertical() && this.layoutService.sidebarActive();
+  get showAngleDown() {
+    return this.layoutService.sidebarVertical();
   }
 }

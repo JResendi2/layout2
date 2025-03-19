@@ -5,10 +5,9 @@ import { MenuItem } from 'primeng/api';
 import { LayoutService } from './service/layout.service';
 
 @Component({
-  selector: '[menu-link]',
-  standalone: true,
-  imports: [RouterModule, CommonModule],
-  templateUrl: './menu-link.component.html',
+    selector: '[menu-link]',
+    imports: [RouterModule, CommonModule],
+    templateUrl: './menu-link.component.html'
 })
 export class MenuLinkComponent {
   @Input() item!: MenuItem;
