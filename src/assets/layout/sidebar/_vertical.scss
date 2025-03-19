@@ -6,8 +6,13 @@
     transition: width $transitionDuration;
     .container-toggle {
       display: flex;
-      justify-content: flex-end;
-      padding: 1rem 1rem 0 0;
+      justify-content: center;
+      padding: 1rem 0 0 0;
+
+      .layout-btn-topbar fa-icon {
+        font-size: 40px; /* Tamaño del ícono */
+        color: var(--primary-contrast-color); /* Color del ícono */
+      }
     }
   }
 }
@@ -17,7 +22,7 @@
   /* Sidebar VERTICAL -> activo*/
   .layout-wrapper.sidebar-vertical.sidebar-vertical-active {
     .layout-sidebar {
-      width: 15rem;
+      width: 10rem;
     }
   }
 
@@ -49,7 +54,7 @@
 @media (max-width: 991px) {
   .layout-wrapper {
     .layout-sidebar {
-      width: 7rem;
+      width: 6rem;
       .sidebar-menu {
         .sidebar-section {
           .section-header {
@@ -69,12 +74,12 @@
 
   .layout-wrapper.sidebar-vertical.sidebar-mobile-inactive {
     .layout-sidebar {
-      width: 7rem;
+      width: 5rem;
     }
   }
   .layout-wrapper.sidebar-vertical.sidebar-mobile-active {
     .layout-sidebar {
-      width: 15rem;
+      width: 8rem;
       .sidebar-menu {
         .sidebar-section {
           .section-header {
@@ -111,7 +116,7 @@
         justify-content: space-between;
         align-items: center;
         outline: 0 none;
-        color: var(--text-color);
+        color: var(--primary-contrast-color);
         list-style-type: none;
         padding-top: 0.75rem;
         padding-bottom: 0.75rem;
@@ -121,7 +126,7 @@
         box-shadow: var(--element-transition-duration);
         transition: background-color var(--element-transition-duration);
         &:hover {
-          background-color: var(--surface-hover);
+          background-color: var(--text-color);
         }
         .section-title {
           display: flex;
@@ -139,7 +144,7 @@
         gap: 0.25rem;
         align-items: center;
         outline: 0 none;
-        color: var(--text-color);
+        color: var(--primary-contrast-color);
         list-style-type: none;
         padding-top: 0.75rem;
         padding-bottom: 0.75rem;

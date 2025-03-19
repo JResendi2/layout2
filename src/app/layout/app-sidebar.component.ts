@@ -4,7 +4,7 @@ import { MenuLinkComponent } from './menu-link.component';
 import { LayoutService } from './service/layout.service';
 import { SidebarSectionComponent } from './sidebar-section.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faTruck } from '@fortawesome/free-solid-svg-icons';
+import { faTruckFast } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   standalone: true,
@@ -15,7 +15,7 @@ import { faTruck } from '@fortawesome/free-solid-svg-icons';
 export class AppSidebarComponent {
   @ViewChild('buttonToggle') buttonToggle!: any;
   model: MenuItem[] = [];
-  faTruck = faTruck; // Asigna el ícono a una propiedad
+  faTruck = faTruckFast; // Asigna el ícono a una propiedad
 
   constructor(public el: ElementRef, private layoutService: LayoutService) {}
 
